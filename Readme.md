@@ -3,7 +3,7 @@
 <p>
 
 Easy tool for Checking events on GitHub for any repo and user,
-writen in Python and Django.
+written in Python and Django.
 
 ## Before Running
 - Create a GitHub Token
@@ -25,3 +25,7 @@ writen in Python and Django.
 - CLI tools 
 - better UI
 - faster performance
+
+## For detailed documentation
+Check pages at: [GitHub Tracker](https://yggdrasill501.github.io/github_tracker/pages/)
+
