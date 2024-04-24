@@ -1,6 +1,9 @@
 """Module contatins api for GitHub events."""
+import logging
 import requests
 from django.conf import settings
+
+MODULE_LOGGER = logging.getLogger(__name__)
 
 
 class GithubApi:
@@ -25,7 +28,12 @@ class GithubApi:
         """
         url = f"{self.base_url}/repos/{repository_name}/events"
         params = {'per_page': per_page}
+        MODULE_LOGGER.debug('Fetching events for %s', repository_name)
         response = self.session.get(url, params=params)
+        if response.status_code == 200:
+            MODULE_LOGGER.debug(f'Successfully fetched events for {repository_name}')
+        else:
+            MODULE_LOGGER.error(f'Failed to fetch events for {repository_name}')
         response.raise_for_status()
         return response.json()
 
@@ -39,6 +47,11 @@ class GithubApi:
         """
         url = f"{self.base_url}/users/{username}"
         response = self.session.get(url)
+        MODULE_LOGGER.debug('Fetching user info for %s', username)  
+        if response.status_code == 200:
+            MODULE_LOGGER.debug(f'Successfully fetched usr info for {username}')
+        else:
+            MODULE_LOGGER.error(f'Failed to fetch user info for {username}')
         response.raise_for_status()
         return response.json()
 
