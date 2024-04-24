@@ -1,4 +1,5 @@
 """Module for views."""
+from django.http import HttpResponse
 from django.shortcuts import render
 from .utils.github_api import GithubApi
 import logging
@@ -6,12 +7,22 @@ import logging
 MODULE_LOGGER = logging.getLogger(__name__)
 
 
+def home(request):
+    """Home page.
+
+    :param request: WSGIRequest, request object.
+    :return: httpresponse, rendered template.
+    :rtype: httpresponse.
+    """
+    return HttpResponse("Welcome to the GitHub Tracker")
+
+
 def github_events(request):
     """Get GitHub events for the user.
 
     :param request: WSGIRequest, request object.
-    :return: HttpResponse, rendered template.
-    :rtype: HttpResponse.
+    :return: httpresponse, rendered template.
+    :rtype: httpresponse.
     """
     MODULE_LOGGER.info('Fetching GitHub events')
     api = GithubApi()
