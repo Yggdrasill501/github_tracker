@@ -8,8 +8,7 @@ writen in Python and Django.
 ## Before Running
 - Create a GitHub Token
 - install GitHub CLI
-- Create a .env file and add there you token you can see the .env.example file for reference
-
+- Run ```gh auth login``` and login with your token
 
 ## How to run.
 - Clone Repo
