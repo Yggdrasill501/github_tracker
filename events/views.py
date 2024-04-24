@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from github_tracker.github_api import GithubApi
+from .utils.github_api import GithubApi
 
 
 def github_events(request):
