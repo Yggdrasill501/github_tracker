@@ -3,4 +3,4 @@ __pycache__/
 github_tracker/__pycache__/
 /__pycache__/
 github_tracker/__pycache__/urls.cpython-311.pyc
-
+.env
