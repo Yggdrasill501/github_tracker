@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Events</title>
+</head>
+<body>
+    <h1>GitHub Events for {{repository}}</h1>
+    <ul>
+        {% for event in events %}
+        <li>
+            <strong>Type:</strong> {{event.type}}<br>
+            <strong>Actor:</strong> {{event.actor.login}}<br>
+            <strong>Event ID:</strong> {{event.id}}<br>
+            <strong>Time:</strong> {{event.created_at}}<br>
+            <strong>Details:</strong> {{event.payload.action | default:"N/A"}}<br>
+        </li>
+        {% empty %}
+        <li>No events found</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
