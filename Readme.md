@@ -27,5 +27,5 @@ written in Python and Django.
 - faster performance
 
 ## For detailed documentation
-Check pages at: [GitHub Tracker](https://yggdrasill501.github.io/github_tracker/pages/)
+Check pages at: [GitHub Tracker](https://github.com/Yggdrasill501/github_tracker/tree/main/pages)
 
